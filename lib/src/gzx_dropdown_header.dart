@@ -89,8 +89,10 @@ class _GZXDropDownHeaderState extends State<GZXDropDownHeader> with SingleTicker
       }).toList(),
     );
 
+    double widgetWidth = widget.width*widget.items.length;
     return Container(
       key: _keyDropDownHearder,
+      width: widgetWidth > _screenWidth?_screenWidth:widgetWidth,
       height: widget.height,
 //      padding: EdgeInsets.only(top: 1, bottom: 1),
       decoration: BoxDecoration(
