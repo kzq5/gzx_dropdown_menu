@@ -14,6 +14,7 @@ class GZXDropDownHeader extends StatefulWidget {
   Color iconDropDownColor;
 
 //  final List<String> menuStrings;
+  final double width;
   final double height;
   final double dividerHeight;
   final Color dividerColor;
@@ -29,6 +30,7 @@ class GZXDropDownHeader extends StatefulWidget {
     @required this.stackKey,
     this.style = const TextStyle(color: Color(0xFF666666), fontSize: 13),
     this.dropDownStyle,
+    this.width = 120,
     this.height = 40,
     this.iconColor = const Color(0xFFafada7),
     this.iconDropDownColor,
@@ -81,7 +83,7 @@ class _GZXDropDownHeaderState extends State<GZXDropDownHeader> with SingleTicker
 
     var gridView = GridView.count(
       crossAxisCount: _menuCount,
-      childAspectRatio: (_screenWidth / _menuCount) / widget.height,
+      childAspectRatio: widget.width / widget.height,
       children: widget.items.map<Widget>((item) {
         return _menu(item);
       }).toList(),
